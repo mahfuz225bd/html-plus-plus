@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tooltip for All Elements</title>
+    <style>
+        /* Target all elements with a title attribute */
+        [title] {
+            position: relative;
+            cursor: help;
+        }
+
+        /* Create the tooltip using the ::after pseudo-element */
+        [title]::after {
+            content: attr(title);
+            /* Pulls the title attribute as the tooltip text */
+            position: absolute;
+            bottom: 150%;
+            /* Position the tooltip above the element */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            /* Prevents hover on the tooltip itself */
+            z-index: 1000;
+            /* Ensure the tooltip appears above other elements */
+        }
+
+        /* Create an arrow for the tooltip */
+        [title]::before {
+            content: "";
+            position: absolute;
+            bottom: 125%;
+            /* Slightly above the tooltip */
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent #333 transparent;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s;
+        }
+
+        /* Show the tooltip on hover */
+        [title]:hover::after,
+        [title]:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Adjust tooltip if it's near the top of the screen */
+        [title]:hover::after {
+            bottom: auto;
+            top: 150%;
+            transform: translateX(-50%);
+        }
+
+        [title]:hover::before {
+            bottom: auto;
+            top: 125%;
+            transform: translate.(-50%).
+        }
+    </style>
+</head>
+
+<body>
+    <p title="This is a paragraph tooltip!">Hover over this paragraph.</p>
+    <button title="This is a button tooltip!">Hover over this button.</button>
+    <a href="#" title="This is a link tooltip!">Hover over this link.</a>
+</body>
+
+</html>
