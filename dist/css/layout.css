@@ -9,10 +9,6 @@
     flex-wrap: wrap;
 }
 
-ul {
-    padding-left: 25px;
-}
-
 header,
 footer {
     width: 100%;
@@ -84,7 +80,6 @@ aside section form[role="search"] button {
         padding: 0;
     }
 }
-
 
 /* Rules for layout designing:
     Header Placement:
