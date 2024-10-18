@@ -28,7 +28,7 @@ header h2 {
     padding: 0 20px;
 }
 
-.container ul {
+ul {
     padding-left: 25px;
 }
 
@@ -42,13 +42,18 @@ aside h3 {
 
 main {
     flex: 1;
+    display: flex;
 }
 
 main, aside {
     padding: 0 20px;
 }
 
-article, section {
+article {
+    height: fit-content;
+}
+
+article, aside > section {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
