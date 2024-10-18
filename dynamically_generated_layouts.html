@@ -1,0 +1,159 @@
+<html>
+
+<head>
+    <title>HTML++ without Theme</title>
+    <!-- <link rel="stylesheet" href="./themes/default/default.css"> -->
+    <link rel="stylesheet" href="./dist/css/index.css">
+    <style>
+        header,
+        aside,
+        main,
+        section,
+        article,
+        footer,
+        .container {
+            border: 1px solid #000;
+        }
+
+        .container {
+            border: 1px solid red;
+        }
+
+        header,
+        aside,
+        main,
+        section,
+        article,
+        footer,
+        .container {
+            padding: 10px;
+        }
+
+        h1 {
+            margin-top: 17px;
+        }
+
+        body {
+            padding: 17px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layouts"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const layoutsContainer = document.getElementById('layouts');
+
+            const generateLayouts = () => {
+                const layouts = [];
+                let layoutCount = 1; // Initialize layout numbering
+
+                // Loop through header placements
+                const headerOptions = [
+                    false,                  // Excluded
+                    'body',                 // Inside body
+                    'container',            // Inside .container
+                    'aside',                // As a child of aside
+                    'main',                 // As a child of main
+                    'article',              // As a child of article
+                    'section'               // As a child of section
+                ];
+                // Loop through aside combinations: none, one (left), one (right), two
+                const asideOptions = [
+                    { left: false, right: false }, // none
+                    { left: true, right: false },  // one left
+                    { left: false, right: true },  // one right
+                    { left: true, right: true }    // two asides
+                ];
+                // Loop through main content types
+                const mainContentOptions = ['main', 'section', 'article'];
+                // Loop through footer placements
+                const footerOptions = [false, 'body', 'container']; // Excluded, in body, in .container
+
+                // Generate combinations
+                headerOptions.forEach(header => {
+                    asideOptions.forEach(aside => {
+                        mainContentOptions.forEach(mainContent => {
+                            footerOptions.forEach(footer => {
+                                // Create a layout object
+                                const layout = {
+                                    header,
+                                    asides: aside,
+                                    content: [],
+                                    footer,
+                                    usesContainer: false // Track if .container is used
+                                };
+
+                                // Add the header
+                                if (header) {
+                                    const headerText = `header, in ${header}`;
+                                    layout.content.push(`<header>${headerText}</header>`);
+                                    if (header === 'container') {
+                                        layout.content.push('<div class="container">'); // Open container if header is in it
+                                        layout.usesContainer = true;
+                                    }
+                                }
+
+                                // Add asides based on the count
+                                if (aside.left) {
+                                    layout.content.unshift(`<aside>aside (left), in main</aside>`);
+                                }
+                                if (aside.right) {
+                                    layout.content.push(`<aside>aside (right), in main</aside>`);
+                                }
+
+                                // Add main content
+                                const mainText = `${mainContent}, in ${header || 'body'}`;
+                                layout.content.push(`<${mainContent}>${mainText}</${mainContent}>`);
+
+                                // Add the footer
+                                if (footer) {
+                                    const footerText = `footer, in ${footer}`;
+                                    layout.content.push(`<footer>${footerText}</footer>`);
+                                    if (footer === 'container') {
+                                        layout.content.push('</div>'); // Close container if footer is in it
+                                        layout.usesContainer = true;
+                                    }
+                                }
+
+                                // Close container if used in the header
+                                if (header === 'container' && aside.left && aside.right) {
+                                    layout.content.push('</div>'); // Close container
+                                }
+
+                                // Store the layout
+                                layouts.push(layout);
+                            });
+                        });
+                    });
+                });
+
+                // Create the HTML for each layout
+                layouts.forEach(layout => {
+                    const layoutDiv = document.createElement('div');
+                    layoutDiv.classList.add('layout'); // Optionally set a class name for styles
+
+                    // Set h3 innerText based on whether .container is used
+                    const h3Text = `Layout ${layoutCount} (${layout.usesContainer ? "With .container" : "Without .container"}):`;
+                    let layoutHtml = `<h3>${h3Text}</h3>`;
+                    layoutCount++; // Increment layout number
+
+                    layout.content.forEach(content => {
+                        layoutHtml += content;
+                    });
+
+                    layoutDiv.innerHTML = layoutHtml;
+                    layoutsContainer.appendChild(layoutDiv);
+                });
+            };
+
+            // Generate and display layouts
+            generateLayouts();
+        });
+
+    </script>
+</body>
+
+</html>

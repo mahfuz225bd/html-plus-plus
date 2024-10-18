@@ -86,3 +86,19 @@ aside section form[role="search"] button {
         padding: 0;
     }
 }
+
+/* Rules for layout designing:
+    Header Placement:
+        Can be excluded, placed in the body, inside a .container, or as a child of aside, main, article, or section.
+
+    Aside Combinations:
+        None, one (left), one (right), or two asides.
+
+    Main Content:
+        Can use only main, section, or article.
+
+    Footer Placement:
+        Can be excluded, placed in the body, inside a .container.
+
+    Container Usage:
+        The .container can be included or excluded and can be placed as a child of any element. */
