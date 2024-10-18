@@ -43,6 +43,7 @@ aside h3 {
 main {
     flex: 1;
     display: flex;
+    flex-wrap: wrap;
 }
 
 main, aside {
