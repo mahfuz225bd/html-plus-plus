@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
+}
+
+header {
+    padding: 30px;
+    background: white;
+}
+
+header h1 {
+    font-size: 2.25rem;
+}
+
+header h2 {
+    font-size: 1.5rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.container ul {
+    padding-left: 25px;
+}
+
+aside {
+    flex: 0 0 20%;
+}
+
+aside h3 {
+    font-size: 1.5rem;
+}
+
+main {
+    flex: 1;
+}
+
+main, aside {
+    padding: 0 20px;
+}
+
+article, section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: smaller;
+}
+
+article header {
+    margin: 0;
+    padding: 0;
+}
+
+article address {
+    display: inline;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+aside section form[role="search"] {
+    display: flex;
+}
+
+aside section form[role="search"] input[type="search"] {
+    flex: 1;
+}
+
+aside section form[role="search"] button {
+    margin-left: 3px;
+}
+
+aside section form[role="search"] input[type="search"],
+aside section form[role="search"] button {
+    padding: 5px;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    aside, main {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+}
