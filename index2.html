@@ -5,17 +5,69 @@
     <link rel="stylesheet" href="./dist/css/index.css">
 </head>
 
+<style>
+    header,
+    aside,
+    main,
+    section,
+    article,
+    footer {
+        border: 1px solid #000;
+        padding: 10px;
+    }
+
+    .container {
+        border: 1px solid red;
+    }
+
+    h1 {
+        margin-top: 17px;
+    }
+
+    body {
+        padding: 17px;
+    }
+</style>
+
 <body>
-    <p>Method 1:</p>
+    <h1>Method 1:</h1>
+    <header>Header</header>
+    <div class="container">
+        <aside>Left aside</aside>
+        <main>Main as main</main>
+        <aside>Right aside</aside>
+    </div>
+    <footer>Footer</footer>
+
+    <h1>Method 2.1:</h1>
+    <header>Header</header>
+    <main>
+        <aside>Left aside</aside>
+        <section>Main as section</section>
+        <aside>Right aside</aside>
+    </main>
+    <footer>Footer</footer>
+
+    <h1>Method 2.2:</h1>
+    <header>Header</header>
+    <main>
+        <aside>Left aside</aside>
+        <article>Main as article</article>
+        <aside>Right aside</aside>
+    </main>
+    <footer>Footer</footer>
+
+    <!-- <h1>Method 3:</h1>
     <main>
         <header>Header inside main, no .container</header>
         <aside>Left</aside>
         <section>Main Content</section>
         <aside>Right</aside>
         <footer>Footer inside main, no .container</footer>
-    </main>
+    </main> -->
 
-    <!-- <div class="container">
+    <!-- <h1>Method 4:</h1>
+    <div class="container">
         <header>Header</header>
         <aside>Left</aside>
         <main>Main Content</main>

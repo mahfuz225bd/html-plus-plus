@@ -19,7 +19,8 @@ main {
     flex-wrap: wrap;
 }
 
-main>section {
+main > section,
+main > article {
     flex: 1;
 }
 
