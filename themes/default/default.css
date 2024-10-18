@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f1f1;
+}
+
+header {
+    padding: 30px;
+    background: white;
+}
+
+header h1 {
+    font-size: 2.25rem;
+}
+
+header h2 {
+    font-size: 1.5rem;
+}
+
+.container {
+    padding: 0 20px;
+}
+
+aside {
+    flex: 0 0 20%;
+}
+
+aside h3 {
+    font-size: 1.5rem;
+}
+
+main, aside {
+    padding: 0 20px;
+}
+
+article, aside > section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 900px) {
+    aside, main {
+        margin-bottom: 20px;
+    }
+}

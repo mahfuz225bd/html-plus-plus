@@ -4,40 +4,13 @@
     padding: 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f1f1f1;
-}
-
-header {
-    padding: 30px;
-    background: white;
-}
-
-header h1 {
-    font-size: 2.25rem;
-}
-
-header h2 {
-    font-size: 1.5rem;
-}
-
 .container {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 20px;
 }
 
 ul {
     padding-left: 25px;
-}
-
-aside {
-    flex: 0 0 20%;
-}
-
-aside h3 {
-    font-size: 1.5rem;
 }
 
 main {
@@ -46,18 +19,12 @@ main {
     flex-wrap: wrap;
 }
 
-main, aside {
-    padding: 0 20px;
+main>section {
+    flex: 1;
 }
 
 article {
     height: fit-content;
-}
-
-article, aside > section {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
 }
 
 figcaption {
@@ -72,13 +39,7 @@ article header {
 
 article address {
     display: inline;
-}
-
-footer {
-    padding: 20px;
-    text-align: center;
-    background: #ddd;
-    margin-top: 20px;
+    font-style: normal;
 }
 
 aside section form[role="search"] {
@@ -104,7 +65,6 @@ aside section form[role="search"] button {
     }
     aside, main {
         width: 100%;
-        margin-bottom: 20px;
         padding: 0;
     }
 }
