@@ -13,14 +13,25 @@ ul {
     padding-left: 25px;
 }
 
+main > header,
+main > footer,
+.container > header,
+.container > footer {
+    width: 100%;
+}
+
 main {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
 }
 
+main > aside, 
 main > section,
-main > article {
+main > article,
+.container > aside,
+.container > section,
+.container > article {
     flex: 1;
 }
 
@@ -31,11 +42,6 @@ article {
 figcaption {
     text-align: center;
     font-size: smaller;
-}
-
-article header {
-    margin: 0;
-    padding: 0;
 }
 
 article address {
@@ -64,7 +70,18 @@ aside section form[role="search"] button {
     .container {
         flex-direction: column;
     }
-    aside, main {
+
+    main {
+        flex-direction: column;
+    }
+
+    header,
+    aside,
+    main,
+    section,
+    article,
+    footer,
+    .container {
         width: 100%;
         padding: 0;
     }

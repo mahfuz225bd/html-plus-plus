@@ -2,78 +2,88 @@
 
 <head>
     <title>HTML++ without Theme</title>
+    <link rel="stylesheet" href="./themes/default/default.css">
     <link rel="stylesheet" href="./dist/css/index.css">
+    <style>
+        header,
+        aside,
+        main,
+        section,
+        article,
+        footer,
+        .container {
+            border: 1px solid #000;
+        }
+
+        .container {
+            border: 1px solid red;
+        }
+
+        header,
+        aside,
+        main,
+        section,
+        article,
+        footer,
+        .container {
+            padding: 10px;
+        }
+
+        h1 {
+            margin-top: 17px;
+        }
+
+        body {
+            padding: 17px;
+        }
+    </style>
 </head>
 
-<style>
-    header,
-    aside,
-    main,
-    section,
-    article,
-    footer {
-        border: 1px solid #000;
-        padding: 10px;
-    }
-
-    .container {
-        border: 1px solid red;
-    }
-
-    h1 {
-        margin-top: 17px;
-    }
-
-    body {
-        padding: 17px;
-    }
-</style>
-
 <body>
-    <h1>Method 1:</h1>
-    <header>Header</header>
+    <h1>Method 1 [header + (.container -> aside + main + aside) + footer]:</h1>
+    <header>Header, in body</header>
     <div class="container">
-        <aside>Left aside</aside>
-        <main>Main as main</main>
-        <aside>Right aside</aside>
+        <aside>Left aside, in .container</aside>
+        <main>Main Content as main, in .container</main>
+        <aside>Right aside, in .container</aside>
     </div>
-    <footer>Footer</footer>
+    <footer>Footer, in body</footer>
 
-    <h1>Method 2.1:</h1>
-    <header>Header</header>
+    <h1>Method 2.1 [header + main -> (aside + section + aside) + footer]:</h1>
+    <header>Header, in body</header>
     <main>
-        <aside>Left aside</aside>
-        <section>Main as section</section>
-        <aside>Right aside</aside>
+        <aside>Left aside, in main, no any .container</aside>
+        <section>Main Content as section, in main, no any .container</section>
+        <aside>Right aside, in main, no any .container</aside>
     </main>
-    <footer>Footer</footer>
+    <footer>Footer, in body</footer>
 
-    <h1>Method 2.2:</h1>
-    <header>Header</header>
+    <h1>Method 2.2 [header + main -> (aside + article + aside) + footer]:</h1>
+    <header>Header, in body</header>
     <main>
-        <aside>Left aside</aside>
-        <article>Main as article</article>
-        <aside>Right aside</aside>
+        <aside>Left aside, in main, no any .container</aside>
+        <article>Main Content as article, in main, no any .container</article>
+        <aside>Right aside, in main, no any .container</aside>
     </main>
-    <footer>Footer</footer>
+    <footer>Footer, in body</footer>
 
-    <!-- <h1>Method 3:</h1>
+    <h1>Method 3 [main -> (header + aside + section + aside + footer)]:</h1>
     <main>
-        <header>Header inside main, no .container</header>
-        <aside>Left</aside>
-        <section>Main Content</section>
-        <aside>Right</aside>
-        <footer>Footer inside main, no .container</footer>
-    </main> -->
+        <header>Header, in main, no any .container</header>
+        <aside>Left aside, in main, no any .container</aside>
+        <section>Main Content as section, in main, no any .container</section>
+        <aside>Right aside, in main, no any .container</aside>
+        <footer>Footer, in main, no .container</footer>
+    </main>
 
-    <!-- <h1>Method 4:</h1>
+    <h1>Method 4 [(.container -> header + aside + main + aside + footer)]:</h1>
     <div class="container">
-        <header>Header</header>
-        <aside>Left</aside>
-        <main>Main Content</main>
-        <aside>Right</aside>
-        <footer>Footer</footer>
-    </div> -->
+        <header>Header, in .container</header>
+        <aside>Left aside, in .container</aside>
+        <main>Main Content as main, in .container</main>
+        <aside>Right aside, in .container</aside>
+        <footer>Footer, in .container</footer>
+    </div>
 
     <script type="module" src="./dist/js/index.js" defer></script>
 </body>
