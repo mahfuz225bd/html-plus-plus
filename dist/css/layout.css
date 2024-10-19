@@ -94,5 +94,5 @@ aside section form[role="search"] button {
     Footer Placement:
         Can be excluded, placed in the body, inside a div.envelope.
 
-    Container Usage:
-        The div.envelope can be included or excluded and can be placed as a child of any element. */
+    Envelope Usage:
+        The div.envelope can be included or excluded and can be placed as a child of any element. Here div.envelope working as container. */
