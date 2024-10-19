@@ -5,7 +5,11 @@
 }
 
 div.envelope {
+  display: -webkit-box;   /* Old Safari */
+  display: -ms-flexbox;   /* IE 10 */
   display: flex;
+  -webkit-box-wrap: wrap; /* Old Safari */
+  -ms-flex-wrap: wrap;    /* IE 10 */
   flex-wrap: wrap;
 }
 
@@ -16,7 +20,11 @@ footer {
 
 main {
   flex: 1;
+  display: -webkit-box;   /* Old Safari */
+  display: -ms-flexbox;   /* IE 10 */
   display: flex;
+  -webkit-box-wrap: wrap; /* Old Safari */
+  -ms-flex-wrap: wrap;    /* IE 10 */
   flex-wrap: wrap;
 }
 
@@ -26,6 +34,8 @@ main > article,
 div.envelope > aside,
 div.envelope > section,
 div.envelope > article {
+  -webkit-box-flex: 1;    /* Old Safari */
+  -ms-flex: 1;            /* IE 10 */
   flex: 1;
 }
 
@@ -78,6 +88,26 @@ aside section form[role="search"] button {
   div.envelope {
     width: 100%;
     padding: 0;
+  }
+}
+
+@supports not (display: flex) {
+  div.envelope {
+    display: block;
+  }
+
+  main {
+    display: block;
+  }
+
+  main > aside,
+  main > section,
+  main > article,
+  div.envelope > aside,
+  div.envelope > section,
+  div.envelope > article {
+    display: block;
+    width: 100%;
   }
 }
 
