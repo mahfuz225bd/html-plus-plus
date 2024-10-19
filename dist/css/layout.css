@@ -1,89 +1,89 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
+div.envelope {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 header,
 footer {
-    width: 100%;
+  width: 100%;
 }
 
 main {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-main > aside, 
+main > aside,
 main > section,
 main > article,
-.container > aside,
-.container > section,
-.container > article {
-    flex: 1;
+div.envelope > aside,
+div.envelope > section,
+div.envelope > article {
+  flex: 1;
 }
 
 article {
-    height: fit-content;
+  height: fit-content;
 }
 
 figcaption {
-    text-align: center;
-    font-size: smaller;
+  text-align: center;
+  font-size: smaller;
 }
 
 article address {
-    display: inline;
-    font-style: normal;
+  display: inline;
+  font-style: normal;
 }
 
 aside section form[role="search"] {
-    display: flex;
+  display: flex;
 }
 
 aside section form[role="search"] input[type="search"] {
-    flex: 1;
+  flex: 1;
 }
 
 aside section form[role="search"] button {
-    margin-left: 3px;
+  margin-left: 3px;
 }
 
 aside section form[role="search"] input[type="search"],
 aside section form[role="search"] button {
-    padding: 5px;
+  padding: 5px;
 }
 
 @media screen and (max-width: 900px) {
-    .container {
-        flex-direction: column;
-    }
+  div.envelope {
+    flex-direction: column;
+  }
 
-    main {
-        flex-direction: column;
-    }
+  main {
+    flex-direction: column;
+  }
 
-    header,
-    aside,
-    main,
-    section,
-    article,
-    footer,
-    .container {
-        width: 100%;
-        padding: 0;
-    }
+  header,
+  aside,
+  main,
+  section,
+  article,
+  footer,
+  div.envelope {
+    width: 100%;
+    padding: 0;
+  }
 }
 
 /* Rules for layout designing:
     Header Placement:
-        Can be excluded, placed in the body, inside a .container, or as a child of aside, main, article, or section.
+        Can be excluded, placed in the body, inside a div.envelope, or as a child of aside, main, article, or section.
 
     Aside Combinations:
         None, one (left), one (right), or two asides.
@@ -92,7 +92,7 @@ aside section form[role="search"] button {
         Can use only main, section, or article.
 
     Footer Placement:
-        Can be excluded, placed in the body, inside a .container.
+        Can be excluded, placed in the body, inside a div.envelope.
 
     Container Usage:
-        The .container can be included or excluded and can be placed as a child of any element. */
+        The div.envelope can be included or excluded and can be placed as a child of any element. */

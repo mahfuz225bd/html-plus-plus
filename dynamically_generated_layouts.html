@@ -11,11 +11,11 @@
         section,
         article,
         footer,
-        .container {
+        div.envelope {
             border: 1px solid #000;
         }
 
-        .container {
+        div.envelope {
             border: 1px solid red;
         }
 
@@ -25,7 +25,7 @@
         section,
         article,
         footer,
-        .container {
+        div.envelope {
             padding: 10px;
         }
 
@@ -54,7 +54,7 @@
                 const headerOptions = [
                     false,                  // Excluded
                     'body',                 // Inside body
-                    'container',            // Inside .container
+                    'container',            // Inside div.envelope
                     'aside',                // As a child of aside
                     'main',                 // As a child of main
                     'article',              // As a child of article
@@ -70,7 +70,7 @@
                 // Loop through main content types
                 const mainContentOptions = ['main', 'section', 'article'];
                 // Loop through footer placements
-                const footerOptions = [false, 'body', 'container']; // Excluded, in body, in .container
+                const footerOptions = [false, 'body', 'container']; // Excluded, in body, in div.envelope
 
                 // Generate combinations
                 headerOptions.forEach(header => {
@@ -83,7 +83,7 @@
                                     asides: aside,
                                     content: [],
                                     footer,
-                                    usesContainer: false // Track if .container is used
+                                    usesContainer: false // Track if div.envelope is used
                                 };
 
                                 // Add the header
@@ -135,8 +135,8 @@
                     const layoutDiv = document.createElement('div');
                     layoutDiv.classList.add('layout'); // Optionally set a class name for styles
 
-                    // Set h3 innerText based on whether .container is used
-                    const h3Text = `Layout ${layoutCount} (${layout.usesContainer ? "With .container" : "Without .container"}):`;
+                    // Set h3 innerText based on whether div.envelope is used
+                    const h3Text = `Layout ${layoutCount} (${layout.usesContainer ? "With div.envelope" : "Without div.envelope"}):`;
                     let layoutHtml = `<h3>${h3Text}</h3>`;
                     layoutCount++; // Increment layout number
 

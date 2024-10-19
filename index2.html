@@ -11,11 +11,11 @@
         section,
         article,
         footer,
-        .container {
+        div.envelope {
             border: 1px solid #000;
         }
 
-        .container {
+        div.envelope {
             border: 1px solid red;
         }
 
@@ -25,7 +25,7 @@
         section,
         article,
         footer,
-        .container {
+        div.envelope {
             padding: 10px;
         }
 
@@ -40,49 +40,49 @@
 </head>
 
 <body>
-    <h1>Method 1 [header + (.container -> aside + main + aside) + footer]:</h1>
+    <h1>Method 1 [header + (div.envelope -> aside + main + aside) + footer]:</h1>
     <header>Header, in body</header>
     <div class="container">
-        <aside>Left aside, in .container</aside>
-        <main>Main Content as main, in .container</main>
-        <aside>Right aside, in .container</aside>
+        <aside>Left aside, in div.envelope</aside>
+        <main>Main Content as main, in div.envelope</main>
+        <aside>Right aside, in div.envelope</aside>
     </div>
     <footer>Footer, in body</footer>
 
     <h1>Method 2.1 [header + main -> (aside + section + aside) + footer]:</h1>
     <header>Header, in body</header>
     <main>
-        <aside>Left aside, in main, no any .container</aside>
-        <section>Main Content as section, in main, no any .container</section>
-        <aside>Right aside, in main, no any .container</aside>
+        <aside>Left aside, in main, no any div.envelope</aside>
+        <section>Main Content as section, in main, no any div.envelope</section>
+        <aside>Right aside, in main, no any div.envelope</aside>
     </main>
     <footer>Footer, in body</footer>
 
     <h1>Method 2.2 [header + main -> (aside + article + aside) + footer]:</h1>
     <header>Header, in body</header>
     <main>
-        <aside>Left aside, in main, no any .container</aside>
-        <article>Main Content as article, in main, no any .container</article>
-        <aside>Right aside, in main, no any .container</aside>
+        <aside>Left aside, in main, no any div.envelope</aside>
+        <article>Main Content as article, in main, no any div.envelope</article>
+        <aside>Right aside, in main, no any div.envelope</aside>
     </main>
     <footer>Footer, in body</footer>
 
     <h1>Method 3 [main -> (header + aside + section + aside + footer)]:</h1>
     <main>
-        <header>Header, in main, no any .container</header>
-        <aside>Left aside, in main, no any .container</aside>
-        <section>Main Content as section, in main, no any .container</section>
-        <aside>Right aside, in main, no any .container</aside>
-        <footer>Footer, in main, no .container</footer>
+        <header>Header, in main, no any div.envelope</header>
+        <aside>Left aside, in main, no any div.envelope</aside>
+        <section>Main Content as section, in main, no any div.envelope</section>
+        <aside>Right aside, in main, no any div.envelope</aside>
+        <footer>Footer, in main, no div.envelope</footer>
     </main>
 
-    <h1>Method 4 [(.container -> header + aside + main + aside + footer)]:</h1>
+    <h1>Method 4 [(div.envelope -> header + aside + main + aside + footer)]:</h1>
     <div class="container">
-        <header>Header, in .container</header>
-        <aside>Left aside, in .container</aside>
-        <main>Main Content as main, in .container</main>
-        <aside>Right aside, in .container</aside>
-        <footer>Footer, in .container</footer>
+        <header>Header, in div.envelope</header>
+        <aside>Left aside, in div.envelope</aside>
+        <main>Main Content as main, in div.envelope</main>
+        <aside>Right aside, in div.envelope</aside>
+        <footer>Footer, in div.envelope</footer>
     </div>
 
     <script type="module" src="./dist/js/index.js" defer></script>
