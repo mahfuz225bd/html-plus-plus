@@ -2,7 +2,7 @@
 
 <head>
     <title>HTML++ without Theme</title>
-    <link rel="stylesheet" href="./dist/css/index.css">
+    <link rel="stylesheet" href="../dist/css/index.css">
     <style>
         header,
         aside,
@@ -46,7 +46,7 @@
             const layoutsContainer = document.getElementById('layouts');
 
             const generateLayouts = () => {
-                const layouts = [];
+                const layoutList = []; // Renamed from layouts to layoutList
                 let layoutCount = 1; // Initialize layout numbering
 
                 // Loop through header placements
@@ -124,14 +124,14 @@
                                 }
 
                                 // Store the layout
-                                layouts.push(layout);
+                                layoutList.push(layout);
                             });
                         });
                     });
                 });
 
                 // Create the HTML for each layout
-                layouts.forEach(layout => {
+                layoutList.forEach(layout => {
                     const layoutDiv = document.createElement('div');
                     layoutDiv.classList.add('layout'); // Optionally set a class name for styles
 
@@ -145,15 +145,15 @@
                     });
 
                     layoutDiv.innerHTML = layoutHtml;
-                    layoutsContainer.appendChild(layoutDiv);
+                    layoutsContainer.appendChild(layoutDiv); // Append to the correct container
                 });
             };
 
             // Generate and display layouts
             generateLayouts();
         });
-
     </script>
+
 </body>
 
 </html>

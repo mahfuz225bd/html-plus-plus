@@ -2,8 +2,8 @@
 
 <head>
     <title>HTML++ without Theme</title>
-    <link rel="stylesheet" href="./themes/default/default.css">
-    <link rel="stylesheet" href="./dist/css/index.css">
+    <link rel="stylesheet" href="../themes/default/default.css">
+    <link rel="stylesheet" href="../dist/css/index.css">
     <style>
         header,
         aside,
@@ -42,7 +42,7 @@
 <body>
     <h1>Method 1 [header + (div.envelope -> aside + main + aside) + footer]:</h1>
     <header>Header, in body</header>
-    <div class="container">
+    <div class="envelope">
         <aside>Left aside, in div.envelope</aside>
         <main>Main Content as main, in div.envelope</main>
         <aside>Right aside, in div.envelope</aside>
@@ -77,7 +77,7 @@
     </main>
 
     <h1>Method 4 [(div.envelope -> header + aside + main + aside + footer)]:</h1>
-    <div class="container">
+    <div class="envelope">
         <header>Header, in div.envelope</header>
         <aside>Left aside, in div.envelope</aside>
         <main>Main Content as main, in div.envelope</main>
@@ -85,7 +85,7 @@
         <footer>Footer, in div.envelope</footer>
     </div>
 
-    <script type="module" src="./dist/js/index.js" defer></script>
+    <script type="module" src="../dist/js/index.js" defer></script>
 </body>
 
 </html>
