@@ -1,6 +1,33 @@
 @import url('./layout.css');
 @import url('./ul.css');
 
+figcaption {
+    text-align: center;
+    font-size: smaller;
+  }
+  
+  article address {
+    display: inline;
+    font-style: normal;
+  }
+  
+  aside section form[role="search"] {
+    display: flex;
+  }
+  
+  aside section form[role="search"] input[type="search"] {
+    flex: 1;
+  }
+  
+  aside section form[role="search"] button {
+    margin-left: 3px;
+  }
+  
+  aside section form[role="search"] input[type="search"],
+  aside section form[role="search"] button {
+    padding: 5px;
+  }
+
 .fake-img {
     background-color: #aaa;
     width: 100%;

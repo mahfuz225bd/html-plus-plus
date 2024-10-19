@@ -40,34 +40,7 @@ div.envelope > article {
 }
 
 article {
-  height: fit-content;
-}
-
-figcaption {
-  text-align: center;
-  font-size: smaller;
-}
-
-article address {
-  display: inline;
-  font-style: normal;
-}
-
-aside section form[role="search"] {
-  display: flex;
-}
-
-aside section form[role="search"] input[type="search"] {
-  flex: 1;
-}
-
-aside section form[role="search"] button {
-  margin-left: 3px;
-}
-
-aside section form[role="search"] input[type="search"],
-aside section form[role="search"] button {
-  padding: 5px;
+  /* height: fit-content; */
 }
 
 @media screen and (max-width: 900px) {
@@ -92,20 +65,14 @@ aside section form[role="search"] button {
 }
 
 @supports not (display: flex) {
-  div.envelope {
-    display: block;
-  }
-
-  main {
-    display: block;
-  }
-
-  main > aside,
-  main > section,
-  main > article,
-  div.envelope > aside,
-  div.envelope > section,
-  div.envelope > article {
+  header,
+  aside,
+  main,
+  section,
+  article,
+  footer,
+  div.envelope
+  {
     display: block;
     width: 100%;
   }
