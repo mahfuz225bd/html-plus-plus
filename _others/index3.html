@@ -28,12 +28,26 @@
             padding: 10px;
         }
 
-        h1 {
-            margin-top: 17px;
+        .layout {
+            margin-top: 25px;
         }
 
         body {
             padding: 17px;
+        }
+
+        .copy-button {
+            margin-left: 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .copy-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -131,13 +145,13 @@
                 });
 
                 // Create the HTML for each layout
-                layoutList.forEach(layout => {
+                layoutList.forEach((layout, index) => {
                     const layoutDiv = document.createElement('div');
                     layoutDiv.classList.add('layout'); // Optionally set a class name for styles
 
                     // Set h3 innerText based on whether div.envelope is used
                     const h3Text = `Layout ${layoutCount} (${layout.usesEnvelope ? "With div.envelope" : "Without div.envelope"}):`;
-                    let layoutHtml = `<h3>${h3Text}</h3>`;
+                    let layoutHtml = `<h3>${h3Text} <button class="copy-button" data-layout="${encodeURIComponent(layout.content.join(''))}">Copy</button></h3>`;
                     layoutCount++; // Increment layout number
 
                     layout.content.forEach(content => {
@@ -146,6 +160,18 @@
 
                     layoutDiv.innerHTML = layoutHtml;
                     layoutsContainer.appendChild(layoutDiv); // Append to the correct container
+                });
+
+                // Add event listeners for copy buttons
+                document.querySelectorAll('.copy-button').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const layoutCode = decodeURIComponent(e.target.dataset.layout);
+                        navigator.clipboard.writeText(layoutCode).then(() => {
+                            alert('Layout code copied to clipboard!');
+                        }).catch(err => {
+                            console.error('Could not copy text: ', err);
+                        });
+                    });
                 });
             };
 
