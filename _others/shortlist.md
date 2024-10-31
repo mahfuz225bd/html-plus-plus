@@ -1,19 +1,33 @@
 # For **ES5-compatible** Sequential Task Execution Techniques
 
 1. **Recursion with Callbacks**: A straightforward recursive approach to execute tasks sequentially.
+
 2. **Loop with Callbacks**: Using a `for` or `while` loop to iterate through tasks.
+
 3. **setTimeout**: Leveraging `setTimeout` to create non-blocking task execution.
+
 4. **Single Task Execution**: A minimal function that handles only one task at a time with a callback.
+
 5. **Chained Callbacks**: Manually chaining callbacks for each task.
+
 6. **Task Queue**: Implementing a queue structure to manage and execute tasks in sequence.
+
 7. **Callback Stacking with `apply()` or `call()`**: Using function methods to manage callbacks and task execution.
+
 8. **Using a Simple Counter with a Loop**: Utilizing a counter variable to keep track of the current task in a loop.
+
 9. **Using a Self-Invoking Function**: Encapsulating the task execution logic in a self-invoking function.
+
 10. **Using `Array.prototype.reduce()`**: Leveraging `reduce` to chain tasks in a sequential manner.
+
 11. **Event Emitter Pattern**: Implementing an event emitter to handle task execution and completion events.
+
 12. **Promises with a Polyfill**
+
 13. **Using `forEach` with Closure**
+
 14. **Using a Helper Function for Task Execution**
+
 15. **Using a Generator Function with a Polyfill**: Simulating generator-like behavior to yield tasks in sequence.
 
 16. **Using a Module Pattern**: Encapsulating task execution logic and state within a module.

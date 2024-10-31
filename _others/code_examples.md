@@ -243,44 +243,45 @@ performTasks(task1, task2, task3);
 
 Each of these methods adds a different level of flexibility and control over task execution while maintaining compatibility with ES5.
 
+```javascript
 var performTasks = function (tasks) {
-var index = 0; // Initialize index to track current task
+  var index = 0; // Initialize index to track current task
 
-var executeNext = function () {
-if (index >= tasks.length) {
-console.log("All tasks completed");
-return;
-}
+  var executeNext = function () {
+    if (index >= tasks.length) {
+      console.log("All tasks completed");
+      return;
+    }
 
     // Execute the current task
     tasks[index](function () {
       index++; // Move to the next task
       executeNext(); // Execute the next task
     });
+  };
 
-};
-
-executeNext(); // Start executing tasks
+  executeNext(); // Start executing tasks
 };
 
 // Define tasks
 var task1 = function (callback) {
-console.log("Task 1 executed");
-setTimeout(callback, 1000); // Simulate asynchronous work
+  console.log("Task 1 executed");
+  setTimeout(callback, 1000); // Simulate asynchronous work
 };
 
 var task2 = function (callback) {
-console.log("Task 2 executed");
-setTimeout(callback, 1000);
+  console.log("Task 2 executed");
+  setTimeout(callback, 1000);
 };
 
 var task3 = function (callback) {
-console.log("Task 3 executed");
-setTimeout(callback, 1000);
+  console.log("Task 3 executed");
+  setTimeout(callback, 1000);
 };
 
 // Execute tasks
 performTasks([task1, task2, task3]);
+```
 
 Here are some more **ES5-compatible** techniques for handling sequential task execution, complete with code examples:
 
@@ -488,6 +489,7 @@ These examples provide additional methods for handling sequential task execution
 Here are a few more **ES5-compatible** solutions for sequential task execution, which build on the previously mentioned methods:
 
 ### 12. **Promises with a Polyfill**
+
 If you can use a promise polyfill in an ES5 environment, you can simulate promise behavior for sequential execution.
 
 ```javascript
@@ -553,6 +555,7 @@ performTasks([task1, task2, task3]);
 ```
 
 ### 13. **Using `forEach` with Closure**
+
 You can use `Array.prototype.forEach` with a closure to maintain the context of the current index for executing tasks sequentially.
 
 ```javascript
@@ -596,6 +599,7 @@ performTasks([task1, task2, task3]);
 ```
 
 ### 14. **Using a Helper Function for Task Execution**
+
 You can create a helper function to manage the execution flow of tasks.
 
 ```javascript
@@ -635,6 +639,3 @@ var task3 = function (callback) {
 // Execute tasks
 performTasks([task1, task2, task3]);
 ```
-
----
-
