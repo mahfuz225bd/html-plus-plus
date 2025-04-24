@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive 500+ Column Table</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        h1,
+        footer {
+            padding: 1em;
+            background: #eee;
+            text-align: center;
+            font-size: 1.25em;
+        }
+
+        [role="scrollbar"] {
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            border-collapse: collapse;
+            white-space: nowrap;
+            width: max-content;
+            min-width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            text-align: center;
+            padding: 0.25em 0.5em;
+            font-size: 0.9em;
+        }
+
+        thead {
+            background: #f0f0f0;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        tfoot {
+            background: #eaeaea;
+            font-weight: bold;
+        }
+
+        /* === RESPONSIVE BREAKPOINTS === */
+
+        /* Tiny OLEDs - 64px–128px */
+        @media (max-width: 128px) {
+            body {
+                font-size: 0.4em;
+            }
+
+            h1,
+            footer {
+                font-size: 0.5em;
+                padding: 0.2em;
+            }
+
+            th,
+            td {
+                font-size: 0.4em;
+                padding: 0.1em;
+            }
+
+            div {
+                padding: 0;
+            }
+        }
+
+        /* Fitness Trackers - 160px max */
+        @media (max-width: 160px) {
+
+            h1,
+            footer {
+                font-size: 0.55em;
+                padding: 0.25em;
+            }
+
+            th,
+            td {
+                font-size: 0.45em;
+                padding: 0.15em;
+            }
+        }
+
+        /* Feature Phones - 240px max */
+        @media (max-width: 240px) {
+
+            h1,
+            footer {
+                font-size: 0.65em;
+            }
+
+            th,
+            td {
+                font-size: 0.5em;
+                padding: 0.2em 0.3em;
+            }
+        }
+
+        /* Smartwatches - 454px max */
+        @media (max-width: 454px) {
+
+            h1,
+            footer {
+                font-size: 0.8em;
+            }
+
+            th,
+            td {
+                font-size: 0.6em;
+            }
+        }
+
+        /* Small Phones / Mini Web Views */
+        @media (max-width: 540px) {
+
+            h1,
+            footer {
+                font-size: 0.9em;
+                padding: 0.5em;
+            }
+
+            th,
+            td {
+                font-size: 0.7em;
+                padding: 0.2em 0.3em;
+            }
+        }
+
+        /* Standard tablets / mid-range phones */
+        @media (max-width: 768px) {
+
+            th,
+            td {
+                font-size: 0.75em;
+                padding: 0.2em 0.4em;
+            }
+        }
+
+        /* Medium screens */
+        @media (max-width: 1024px) {
+
+            th,
+            td {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML Table</h1>
+
+    <div role="scrollbar" style="height: 250px;">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <script>
+                        for (let i = 1; i <= 500; i++) {
+                            document.write(`<th>C${i}</th>`);
+                        }
+                    </script>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    for (let row = 1; row <= 100; row++) {
+                        document.write(`<tr><td>${row}</td>`);
+                        for (let col = 1; col <= 500; col++) {
+                            document.write(`<td>R${row}C${col}</td>`);
+                        }
+                        document.write('</tr>');
+                    }
+                </script>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Σ</td>
+                    <script>
+                        for (let i = 1; i <= 500; i++) {
+                            document.write(`<td>Total C${i}</td>`);
+                        }
+                    </script>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <footer>
+        Some footer text
+    </footer>
+
+    <script>
+        // Polyfill for :has(table) style effect
+        document.querySelectorAll('*').forEach(el => {
+            if (el.querySelector('table')) {
+                el.style.overflowX = 'auto';
+                el.style.webkitOverflowScrolling = 'touch';
+            }
+        });
+    </script>
+</body>
+
+</html>
